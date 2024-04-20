@@ -1,0 +1,6 @@
+services:
+  sample_ai_chat:
+    environment:
+      GOOGLE_APPLICATION_CREDENTIALS: /gcloud/key.json
+    volumes:
+      - ~/.config/gcloud/application_default_credentials.json:/gcloud/key.json:ro
