@@ -13,8 +13,6 @@ ENV PORT 8501
 RUN apt-get update -y && apt-get upgrade -y && \
   apt-get install -y libgl1-mesa-dev libglib2.0-0
 
-
-COPY scripts/ scripts/
 COPY .streamlit/ .streamlit/
 
 COPY requirements.lock .
@@ -23,4 +21,4 @@ RUN pip install -r requirements.txt
 
 COPY sample_ai_chat/ sample_ai_chat/
 
-CMD ["python", "scripts/run_start.py"]
+CMD ["streamlit", "run", "sample_ai_chat/run_streamlit.py"]
